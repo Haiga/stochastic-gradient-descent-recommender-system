@@ -1,7 +1,9 @@
-from SVD_main_comment import readFile
+from main import readFile
 import random
 import numpy as np
+import os
 
+os.mkdir('fold')
 u, i, u_i_r = readFile("ratings.csv", type="train", type_return="array")
 
 size_pop = len(u_i_r)
