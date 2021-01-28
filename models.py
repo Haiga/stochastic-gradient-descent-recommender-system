@@ -61,10 +61,10 @@ class SGD:
 
         for iter in range(self.num_iteracoes):
             # Adicionando uma aleatorização na forma com que os usuários são percorridos para evitar ficar preso em minimos locais
-            np.random.shuffle(user_keys)
+            # np.random.shuffle(user_keys)
             for u in user_keys:
                 for i in users_items_map_train[u]:
-                    if u in users_keys_test and i in items_keys_test:
+                    if u in users_keys_test or i in items_keys_test:
                         eui = users_items_map_train[u][i] - np.matmul(
                             (self.P[indexes_users[u]]), (self.Q[:, indexes_items[i]]))
 
